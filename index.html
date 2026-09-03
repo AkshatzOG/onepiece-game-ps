@@ -393,6 +393,410 @@
       <div class="footer-links">
         <a href="https://www.youtube.com/@nirvana.editzz" target="_blank" rel="noopener">YouTube</a>
         <a href="https://onepiece-game.pages.dev" target="_blank" rel="noopener">Live site</a>
+        <a href="t.me/OnePieceGamee" target="_blank" rel="noopener">Telegram</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Draft Battle — a One Piece fan project by NIRVΛNA</title>
+<meta name="description" content="A fan-made One Piece crew-drafting game — built solo, live, and free. Portfolio showcase.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0e17;
+    --ink-2:#0e1524;
+    --panel:#121a2b;
+    --line: rgba(226,232,244,0.10);
+    --line-strong: rgba(226,232,244,0.18);
+    --text: #e6eaf3;
+    --text-dim: #97a2b8;
+    --text-faint: #5f6b82;
+    --blue: #4c7fff;
+    --blue-dim: #2a3d66;
+    --gold: #e0a94a;
+    --parchment: #ece2c8;
+    --parchment-ink: #2a2110;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'IBM Plex Sans', -apple-system, sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--text);
+    font-family:var(--sans);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{ background:var(--blue-dim); color:#fff; }
+  a{ color:inherit; }
+  img{ max-width:100%; display:block; }
+
+  .wrap{ max-width:960px; margin:0 auto; padding:0 28px; }
+
+  /* ===== NAV ===== */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(10,14,23,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{ display:flex; align-items:center; justify-content:space-between; padding:16px 28px; }
+  .brand{ font-family:var(--serif); font-weight:600; font-size:17px; text-decoration:none; }
+  .nav-links{ display:flex; align-items:center; gap:26px; }
+  .nav-links a.quiet{
+    font-size:13px; color:var(--text-dim); text-decoration:none;
+  }
+  .nav-links a.quiet:hover{ color:var(--text); }
+  .nav-cta{
+    font-size:13px; font-weight:600; color:var(--ink);
+    background:var(--blue); padding:9px 18px; border-radius:7px;
+    text-decoration:none; transition:background 0.15s ease;
+  }
+  .nav-cta:hover{ background:#618bff; }
+
+  /* ===== HERO ===== */
+  header.hero{ padding:88px 0 0; }
+  .hero-inner{ max-width:660px; }
+  .hero-kicker{ font-family:var(--mono); font-size:12.5px; color:var(--text-faint); margin-bottom:22px; }
+  .hero-kicker span{ color:var(--gold); }
+  h1.hero-title{
+    font-family:var(--serif); font-weight:600;
+    font-size:clamp(34px, 5.4vw, 56px);
+    line-height:1.08; letter-spacing:-0.5px;
+    margin:0 0 22px; color:#f4f6fb;
+  }
+  h1.hero-title em{ font-style:italic; font-weight:500; color:var(--gold); }
+  .hero-sub{ font-size:16.5px; color:var(--text-dim); max-width:54ch; margin:0 0 34px; }
+  .hero-actions{ display:flex; align-items:center; gap:22px; flex-wrap:wrap; margin-bottom:64px; }
+  .btn-primary{
+    display:inline-flex; align-items:center; gap:9px;
+    background:var(--blue); color:#fff; font-weight:600; font-size:14.5px;
+    padding:13px 24px; border-radius:8px; text-decoration:none;
+    transition:background 0.15s ease, transform 0.15s ease;
+  }
+  .btn-primary:hover{ background:#618bff; transform:translateY(-1px); }
+  .link-quiet{
+    font-size:14px; color:var(--text-dim); text-decoration:none;
+    border-bottom:1px solid var(--line-strong); padding-bottom:2px;
+  }
+  .link-quiet:hover{ color:var(--text); border-color:var(--text-dim); }
+
+  /* ===== SCREENSHOT FRAME — shared by every image on the page ===== */
+  .frame{
+    border:1px solid var(--line-strong);
+    border-radius:10px;
+    overflow:hidden;
+    background:var(--ink-2);
+  }
+  .frame-bar{
+    display:flex; align-items:center; gap:7px;
+    padding:11px 14px;
+    border-bottom:1px solid var(--line);
+    background:var(--panel);
+  }
+  .frame-dot{ width:8px; height:8px; border-radius:50%; background:#2a3348; }
+  .frame-shot{
+    aspect-ratio: 1600 / 727;
+    display:flex; align-items:center; justify-content:center;
+    background:#070a11;
+  }
+  .frame-shot img{ width:100%; height:100%; object-fit:contain; }
+  .hero .frame{ box-shadow:0 40px 80px -30px rgba(0,0,0,0.6); }
+
+  .stat-row{ display:flex; gap:40px; flex-wrap:wrap; padding:36px 0 84px; border-bottom:1px solid var(--line); }
+  .stat b{ font-family:var(--serif); display:block; font-size:26px; font-weight:600; color:#f4f6fb; }
+  .stat span{ font-size:12.5px; color:var(--text-faint); }
+
+  /* ===== LOG ENTRIES ===== */
+  .log{ padding:96px 0; border-bottom:1px solid var(--line); }
+  .log:last-of-type{ border-bottom:none; }
+  .log-head{ display:flex; align-items:baseline; gap:16px; margin-bottom:14px; }
+  .log-coord{ font-family:var(--mono); font-size:12px; color:var(--gold); white-space:nowrap; }
+  .log-rule{ flex:1; height:1px; background:var(--line-strong); }
+  h2.log-title{ font-family:var(--serif); font-weight:600; font-size:28px; margin:0 0 14px; color:#f4f6fb; }
+  .log-text{ color:var(--text-dim); font-size:15px; max-width:58ch; margin:0 0 40px; }
+  .log-text strong{ color:var(--text); font-weight:600; }
+  .log-text + .log-text{ margin-top:-24px; }
+
+  .shots{ display:grid; gap:18px; }
+  .shots.two{ grid-template-columns:1fr 1fr; }
+  figure{ margin:0; }
+  figcaption{ font-size:12.5px; color:var(--text-faint); margin-top:9px; }
+
+  @media(max-width:640px){
+    .shots.two{ grid-template-columns:1fr; }
+    .log{ padding:64px 0; }
+    header.hero{ padding:56px 0 0; }
+    .stat-row{ gap:26px; padding-bottom:56px; }
+    .nav-links{ gap:16px; }
+    .nav-links a.quiet{ display:none; }
+  }
+
+  /* ===== FEATURE LIST (AI opponent / theme / auth callouts) ===== */
+  .feature-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:28px;
+    margin-top:8px;
+  }
+  .feature{
+    border:1px solid var(--line);
+    border-radius:9px;
+    padding:20px 22px;
+  }
+  .feature h3{
+    font-family:var(--sans); font-size:14px; font-weight:600;
+    color:#f4f6fb; margin:0 0 8px;
+  }
+  .feature p{ font-size:13.5px; color:var(--text-faint); margin:0; }
+  @media(max-width:640px){ .feature-grid{ grid-template-columns:1fr; } }
+
+  /* ===== PARCHMENT CALLOUT ===== */
+  .parchment-note{
+    background:var(--parchment); color:var(--parchment-ink);
+    border-radius:8px; padding:18px 22px; font-size:13.5px;
+    margin-top:28px; display:flex; gap:14px; align-items:flex-start;
+  }
+  .parchment-note b{ font-family:var(--serif); }
+
+  /* ===== STACK SECTION ===== */
+  .stack-list{
+    display:flex; flex-wrap:wrap; gap:10px;
+    margin:28px 0 0;
+    padding:0; list-style:none;
+  }
+  .stack-list li{
+    font-family:var(--mono); font-size:12.5px;
+    color:var(--text-dim);
+    border:1px solid var(--line-strong);
+    border-radius:6px;
+    padding:7px 12px;
+  }
+  .role-note{
+    margin-top:32px;
+    padding-top:32px;
+    border-top:1px solid var(--line);
+    font-size:14.5px;
+    color:var(--text-dim);
+    max-width:58ch;
+  }
+  .role-note strong{ color:var(--text); }
+
+  /* ===== FOOTER ===== */
+  footer{ padding:80px 0 56px; }
+  .footer-cta{ text-align:center; padding-bottom:64px; border-bottom:1px solid var(--line); margin-bottom:40px; }
+  .footer-cta h3{ font-family:var(--serif); font-weight:600; font-size:26px; margin:0 0 20px; color:#f4f6fb; }
+  .footer-meta{ display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:24px; font-size:12.5px; color:var(--text-faint); }
+  .footer-meta a{ color:var(--text-dim); text-decoration:none; }
+  .footer-meta a:hover{ color:var(--text); }
+  .footer-links{ display:flex; gap:18px; flex-wrap:wrap; }
+  .foot-disclaimer{ max-width:46ch; line-height:1.6; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Draft Battle</a>
+    <div class="nav-links">
+      <a class="quiet" href="#log-draft">Draft</a>
+      <a class="quiet" href="#log-community">Community</a>
+      <a class="quiet" href="#log-poster">Poster</a>
+      <a class="quiet" href="#log-stack">Build</a>
+      <a class="nav-cta" href="https://onepiece-game.pages.dev" target="_blank" rel="noopener">Play it live</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="hero-kicker">fan project · built solo by <span>NIRVΛNA</span></div>
+      <h1 class="hero-title">Draft a crew.<br>Battle for the <em>bounty.</em></h1>
+      <p class="hero-sub">A browser game where you pull characters from the One Piece world one roll at a time, build a six-person crew, and see whose lineup comes out on top — with a live leaderboard, a wanted-poster generator, and a board where the community argues about the ratings.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="https://onepiece-game.pages.dev" target="_blank" rel="noopener">Play the game →</a>
+        <a class="link-quiet" href="#log-draft">See how it works</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="frame">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-shot"><img src="assets/landing.jpg" alt="Draft Battle landing screen"></div>
+    </div>
+    <div class="stat-row">
+      <div class="stat"><b>265+</b><span>characters in the pool</span></div>
+      <div class="stat"><b>6v6</b><span>crew draft format</span></div>
+      <div class="stat"><b>live</b><span>leaderboard &amp; accounts</span></div>
+      <div class="stat"><b>solo</b><span>designed, built, deployed</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="log" id="log-draft">
+    <div class="log-head">
+      <span class="log-coord">01</span>
+      <div class="log-rule"></div>
+    </div>
+    <h2 class="log-title">The draft</h2>
+    <p class="log-text">Two crews take turns rolling random characters and slotting them into roles — Captain, Vice, Tank, three Support. Every character carries a community-sourced power rating, so each pick is a real trade-off: bank on a strong captain roll, or hold out for a better support line. Play against a friend, or flip on the AI opponent and go solo — it drafts with its own role priority based on the strength of what it rolls, so it's not just picking at random either.</p>
+    <div class="shots two">
+      <figure>
+        <div class="frame">
+          <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+          <div class="frame-shot"><img src="assets/draft-dark.jpg" alt="Draft screen in dark theme"></div>
+        </div>
+        <figcaption>Dark theme — the default.</figcaption>
+      </figure>
+      <figure>
+        <div class="frame">
+          <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+          <div class="frame-shot"><img src="assets/draft-light.jpg" alt="Draft screen in light theme"></div>
+        </div>
+        <figcaption>Same screen, light theme — a toggle away.</figcaption>
+      </figure>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature">
+        <h3>Turn-based, role-aware</h3>
+        <p>Slots are locked to their role — a rolled character only fills an empty seat that fits, and the UI colors each crew independently so it's always clear whose turn is whose.</p>
+      </div>
+      <div class="feature">
+        <h3>Score, then screenshot</h3>
+        <p>Once both crews are full, the game tallies total and average power, declares a winner, and lets you save the result as an image — styled to match whichever theme you're on.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="log" id="log-community">
+    <div class="log-head">
+      <span class="log-coord">02</span>
+      <div class="log-rule"></div>
+    </div>
+    <h2 class="log-title">Ratings, crowdsourced</h2>
+    <p class="log-text">Every rating in the pool is community-tuned rather than something I set once and left alone. Signed-in players vote on existing characters and pitch new additions — I review every suggestion before it touches the live pool, so the numbers stay fair without me guessing alone at 269 characters' worth of power levels.</p>
+    <div class="shots two">
+      <figure>
+        <div class="frame">
+          <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+          <div class="frame-shot"><img src="assets/community-rate.jpg" alt="Community board rating screen with character cards and vote buttons"></div>
+        </div>
+        <figcaption>Rating characters — community average shown against each vote.</figcaption>
+      </figure>
+      <figure>
+        <div class="frame">
+          <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+          <div class="frame-shot"><img src="assets/community-suggest.jpg" alt="Suggest a character form with community suggestions list"></div>
+        </div>
+        <figcaption>Suggesting a missing character, with past submissions below.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="log">
+    <div class="log-head">
+      <span class="log-coord">03</span>
+      <div class="log-rule"></div>
+    </div>
+    <h2 class="log-title">Sign in, get ranked</h2>
+    <p class="log-text">Google or Discord sign-in saves your best crew to a live leaderboard, ranked by total power score. No account needed to play a round — it's only asked for once you've got a crew worth saving, and signing in mid-draft doesn't lose your progress.</p>
+    <div class="shots two">
+      <figure>
+        <div class="frame">
+          <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+          <div class="frame-shot"><img src="assets/signin.jpg" alt="Sign-in modal with Google and Discord options"></div>
+        </div>
+        <figcaption>Sign-in — only shown once there's a crew worth keeping.</figcaption>
+      </figure>
+      <figure>
+        <div class="frame">
+          <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+          <div class="frame-shot"><img src="assets/leaderboard.jpg" alt="Leaderboard showing top-ranked crews and scores"></div>
+        </div>
+        <figcaption>The leaderboard, ranked by power score.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="log" id="log-poster">
+    <div class="log-head">
+      <span class="log-coord">04</span>
+      <div class="log-rule"></div>
+    </div>
+    <h2 class="log-title">Your own wanted poster</h2>
+    <p class="log-text">A second tool, built alongside the draft game: upload a photo, pick a print style, and it's laid onto a Marine-issue wanted poster — bounty, alias, the works. Every element can be dragged directly on the poster to reposition it before downloading.</p>
+    <div class="shots two">
+      <figure>
+        <div class="frame">
+          <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+          <div class="frame-shot"><img src="assets/wanted1.jpg" alt="Wanted poster generator with photo style options"></div>
+        </div>
+        <figcaption>Choosing a print style for the poster.</figcaption>
+      </figure>
+      <figure>
+        <div class="frame">
+          <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+          <div class="frame-shot"><img src="assets/wanted2.jpg" alt="Finished wanted poster with bounty and name set"></div>
+        </div>
+        <figcaption>A finished poster, ready to download.</figcaption>
+      </figure>
+    </div>
+    <div class="parchment-note">
+      <span>🏴‍☠️</span>
+      <div><b>Built by hand, not a template.</b> The poster layout, drag positioning, and print styles are custom — no third-party poster-maker underneath.</div>
+    </div>
+  </section>
+
+  <section class="log" id="log-stack">
+    <div class="log-head">
+      <span class="log-coord">05</span>
+      <div class="log-rule"></div>
+    </div>
+    <h2 class="log-title">Under the hood</h2>
+    <p class="log-text">No framework — the whole front end is hand-written HTML, CSS, and JavaScript. Accounts and the leaderboard run on a hosted database with OAuth sign-in; the site itself deploys straight from source on push. Screenshots are generated client-side from the actual DOM, not a server render.</p>
+    <ul class="stack-list">
+      <li>HTML / CSS / JS</li>
+      <li>Supabase (auth + data)</li>
+      <li>Cloudflare Pages</li>
+      <li>Google &amp; Discord OAuth</li>
+      <li>html2canvas</li>
+      <li>Responsive, mobile-first</li>
+    </ul>
+    <p class="role-note"><strong>Built and run solo</strong> — design, gameplay logic, backend integration, bug fixing, and deployment, all one person. The <a class="link-quiet" href="https://www.youtube.com/@nirvana.editzz" target="_blank" rel="noopener">NIRVΛNA</a> channel is the same project, one level up.</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-cta">
+      <h3>Give it a try</h3>
+      <a class="btn-primary" href="https://onepiece-game.pages.dev" target="_blank" rel="noopener">Play Draft Battle →</a>
+    </div>
+    <div class="footer-meta">
+      <div class="foot-disclaimer">
+        One Piece and all related characters are the property of Eiichiro Oda and Toei Animation. This is an unaffiliated fan project — not endorsed by or connected to Toei Animation or Shueisha.
+      </div>
+      <div class="footer-links">
+        <a href="https://www.youtube.com/@nirvana.editzz" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://onepiece-game.pages.dev" target="_blank" rel="noopener">Live site</a>
+        <a href="t.me/OnePieceGamee" target="_blank" rel="noopener">Telegram</a>
       </div>
     </div>
   </div>
